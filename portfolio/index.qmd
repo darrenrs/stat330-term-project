@@ -1,0 +1,70 @@
+---
+title: "Replace with a specific, informative title"
+subtitle: "Replace with one sentence that tells readers why the question matters"
+author: "Replace with all group members' names"
+date: last-modified
+description: "Replace with a brief description for link previews."
+---
+
+**Narrative word count:** Replace with a number from 750 to 1,000.
+
+::: {.callout-tip}
+This template suggests one way to tell the story. You may rename, combine, or reorder headings and add, remove, or move code chunks. Use plots, tables, selected model output, and prose in whatever combination best communicates your evidence. Keep every required part easy to find, use no more than four primary figures or tables, and delete this note and all bold prompts before submitting.
+:::
+
+## The question
+
+**In one or two short paragraphs, introduce the setting, audience, focused research question, data source, observational unit, response, important predictors, and one important data limitation. Lead with what makes the question worth answering.**
+
+## What the baseline shows
+
+**Describe and justify a simple course-based baseline regression model. Interpret the result that best establishes the rest of the story, including its direction, magnitude, scale, and uncertainty. Explain one limitation or unresolved pattern that motivates deeper analysis.**
+
+```{r}
+# Load packages and data, document preparation, and fit the baseline.
+```
+
+```{r}
+# Show a primary figure or table only if it helps answer the question.
+```
+
+## Going beyond the baseline
+
+**Use two STAT 330 method families. Give each part a descriptive heading that states the question or finding, not an assignment label. Explain why you chose each method, how you checked it, and what it adds to the answer.**
+
+### Replace with a question or finding
+
+**Present one method and its most useful evidence.**
+
+```{r}
+# Analysis code for this part.
+```
+
+### Replace with another question or finding
+
+**Present a method from a different family and its most useful evidence. Combine this with the preceding subsection if that creates a clearer story.**
+
+```{r}
+# Analysis code for this part.
+```
+
+## A new direction with AI
+
+**Explain the need revealed by your preliminary course-based work, the extension you implemented with AI support, and what it contributes to the same research question. Show its substantive result on this page and summarize your independent checks. If the extension is an untaught comparator, evaluate it against the core course-based model. Link to the AI-use record instead of placing a transcript here.**
+
+```{r}
+# Implement the verified extension or show its most useful result.
+```
+
+Details are in the [AI-use record](ai-use.qmd).
+
+## What this means
+
+**Answer the research question directly. Distinguish statistical evidence from practical importance, state the most consequential limitations, and suggest one sensible next step. Avoid causal claims unless the study design supports them.**
+
+## Data and code
+
+- **Data:** Replace with a working source link or citation and any brief acquisition note needed to reproduce the project.
+- **Repository:** Replace with your repository URL.
+- [AI-use record](ai-use.qmd)
+- **Other sources:** Cite package documentation, articles, code, and other sources that materially informed the work.

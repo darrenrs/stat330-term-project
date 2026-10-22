@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "ai-use.html",
+    "href": "ai-use.html",
+    "title": "AI Use and Verification",
+    "section": "",
+    "text": "This page is a work log, not a second report. Short bullets are welcome. It is separate from the final case study and does not count toward the 750 to 1,000 word range."
+  },
+  {
+    "objectID": "ai-use.html#starting-point",
+    "href": "ai-use.html#starting-point",
+    "title": "AI Use and Verification",
+    "section": "Starting point",
+    "text": "Starting point\nAI system and date: Replace.\nBefore using AI for the required extension, briefly state your question, course-based core model, baseline result, and the specific limitation or opportunity you wanted to address."
+  },
+  {
+    "objectID": "ai-use.html#substantive-prompts",
+    "href": "ai-use.html#substantive-prompts",
+    "title": "AI Use and Verification",
+    "section": "Substantive prompts",
+    "text": "Substantive prompts\nPaste the exact prompts that shaped the extension. Include the customized extension-selection prompt from the checkpoint and any important implementation follow-ups. Delete unused prompt blocks.\n\nReplace with an exact prompt.\n\n\nReplace with another exact prompt, if needed."
+  },
+  {
+    "objectID": "ai-use.html#my-decisions",
+    "href": "ai-use.html#my-decisions",
+    "title": "AI Use and Verification",
+    "section": "My decisions",
+    "text": "My decisions\n\nAccepted: What useful advice did you use?\nChanged: What did you adapt to fit your data or goals?\nRejected or corrected: What advice was unsuitable, unnecessary, or wrong?\n\nConnection to the final case study: Identify where the extension’s method and result appear on the final page and how they strengthen the course-based analysis."
+  },
+  {
+    "objectID": "ai-use.html#independent-verification",
+    "href": "ai-use.html#independent-verification",
+    "title": "AI Use and Verification",
+    "section": "Independent verification",
+    "text": "Independent verification\n\nCheck and result: Replace with an official source, diagnostic, simulation, manual calculation, comparison with a known method, or another suitable check.\nCheck and result: Replace with a different check and what you learned.\n\nLink or cite verification sources where appropriate. A second AI response does not count as independent verification."
+  },
+  {
+    "objectID": "ai-use.html#remaining-limitation",
+    "href": "ai-use.html#remaining-limitation",
+    "title": "AI Use and Verification",
+    "section": "Remaining limitation",
+    "text": "Remaining limitation\nState one important uncertainty, failure mode, or limitation that remains."
+  },
+  {
+    "objectID": "ai-use.html#other-ai-use-if-any",
+    "href": "ai-use.html#other-ai-use-if-any",
+    "title": "AI Use and Verification",
+    "section": "Other AI use, if any",
+    "text": "Other AI use, if any\nBriefly disclose earlier debugging, proofreading, or other AI assistance. Write “None” if there was no other use."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Replace with a specific, informative title",
+    "section": "",
+    "text": "Narrative word count: Replace with a number from 750 to 1,000."
+  },
+  {
+    "objectID": "index.html#the-question",
+    "href": "index.html#the-question",
+    "title": "Replace with a specific, informative title",
+    "section": "The question",
+    "text": "The question\nIn one or two short paragraphs, introduce the setting, audience, focused research question, data source, observational unit, response, important predictors, and one important data limitation. Lead with what makes the question worth answering."
+  },
+  {
+    "objectID": "index.html#what-the-baseline-shows",
+    "href": "index.html#what-the-baseline-shows",
+    "title": "Replace with a specific, informative title",
+    "section": "What the baseline shows",
+    "text": "What the baseline shows\nDescribe and justify a simple course-based baseline regression model. Interpret the result that best establishes the rest of the story, including its direction, magnitude, scale, and uncertainty. Explain one limitation or unresolved pattern that motivates deeper analysis.\n\n\nShow code\n# Load packages and data, document preparation, and fit the baseline.\n\n\n\n\nShow code\n# Show a primary figure or table only if it helps answer the question."
+  },
+  {
+    "objectID": "index.html#going-beyond-the-baseline",
+    "href": "index.html#going-beyond-the-baseline",
+    "title": "Replace with a specific, informative title",
+    "section": "Going beyond the baseline",
+    "text": "Going beyond the baseline\nUse two STAT 330 method families. Give each part a descriptive heading that states the question or finding, not an assignment label. Explain why you chose each method, how you checked it, and what it adds to the answer.\n\nReplace with a question or finding\nPresent one method and its most useful evidence.\n\n\nShow code\n# Analysis code for this part.\n\n\n\n\nReplace with another question or finding\nPresent a method from a different family and its most useful evidence. Combine this with the preceding subsection if that creates a clearer story.\n\n\nShow code\n# Analysis code for this part."
+  },
+  {
+    "objectID": "index.html#a-new-direction-with-ai",
+    "href": "index.html#a-new-direction-with-ai",
+    "title": "Replace with a specific, informative title",
+    "section": "A new direction with AI",
+    "text": "A new direction with AI\nExplain the need revealed by your preliminary course-based work, the extension you implemented with AI support, and what it contributes to the same research question. Show its substantive result on this page and summarize your independent checks. If the extension is an untaught comparator, evaluate it against the core course-based model. Link to the AI-use record instead of placing a transcript here.\n\n\nShow code\n# Implement the verified extension or show its most useful result.\n\n\nDetails are in the AI-use record."
+  },
+  {
+    "objectID": "index.html#what-this-means",
+    "href": "index.html#what-this-means",
+    "title": "Replace with a specific, informative title",
+    "section": "What this means",
+    "text": "What this means\nAnswer the research question directly. Distinguish statistical evidence from practical importance, state the most consequential limitations, and suggest one sensible next step. Avoid causal claims unless the study design supports them."
+  },
+  {
+    "objectID": "index.html#data-and-code",
+    "href": "index.html#data-and-code",
+    "title": "Replace with a specific, informative title",
+    "section": "Data and code",
+    "text": "Data and code\n\nData: Replace with a working source link or citation and any brief acquisition note needed to reproduce the project.\nRepository: Replace with your repository URL.\nAI-use record\nOther sources: Cite package documentation, articles, code, and other sources that materially informed the work."
+  }
+]

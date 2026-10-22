@@ -1,0 +1,44 @@
+---
+title: "AI Use and Verification"
+description: "A concise record of AI-supported work on this project."
+author: "Replace with all group members' names"
+---
+
+This page is a work log, not a second report. Short bullets are welcome. It is separate from the final case study and does not count toward the 750 to 1,000 word range.
+
+## Starting point
+
+**AI system and date:** Replace.
+
+**Before using AI for the required extension, briefly state your question, course-based core model, baseline result, and the specific limitation or opportunity you wanted to address.**
+
+## Substantive prompts
+
+Paste the exact prompts that shaped the extension. Include the customized extension-selection prompt from the checkpoint and any important implementation follow-ups. Delete unused prompt blocks.
+
+> Replace with an exact prompt.
+
+> Replace with another exact prompt, if needed.
+
+## My decisions
+
+- **Accepted:** What useful advice did you use?
+- **Changed:** What did you adapt to fit your data or goals?
+- **Rejected or corrected:** What advice was unsuitable, unnecessary, or wrong?
+
+**Connection to the final case study:** Identify where the extension's method and result appear on the final page and how they strengthen the course-based analysis.
+
+## Independent verification
+
+1. **Check and result:** Replace with an official source, diagnostic, simulation, manual calculation, comparison with a known method, or another suitable check.
+2. **Check and result:** Replace with a different check and what you learned.
+
+Link or cite verification sources where appropriate. A second AI response does not count as independent verification.
+
+## Remaining limitation
+
+**State one important uncertainty, failure mode, or limitation that remains.**
+
+## Other AI use, if any
+
+**Briefly disclose earlier debugging, proofreading, or other AI assistance. Write “None” if there was no other use.**

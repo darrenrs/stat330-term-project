@@ -1,0 +1,64 @@
+---
+title: "Replace with a specific project title"
+subtitle: "STAT 330 Portfolio Project Proposal"
+author: "Replace with all group members' names"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+    code-summary: "Show code"
+    embed-resources: true
+execute:
+  warning: false
+  message: false
+---
+
+::: {.callout-tip}
+This proposal is separate from the final case study and does not count toward its word range. Keep the required headings, but add, remove, or move code chunks and output as needed. Delete this note and all bold prompts before submitting.
+:::
+
+**Group members:** Replace with all names. Every member submits the same complete proposal QMD with the same rendered HTML or PDF. The TA will grade only one submission selected from the group.
+
+## Question and audience
+
+**State one focused regression question. Identify the intended audience, explain why the answer matters, and name the response and important candidate predictors.**
+
+## Data
+
+**Provide a working source link or citation. Describe the observational unit, dimensions, response, candidate predictors, collection process if known, and evidence that the data can answer your question. Address permission to share or retrieve the data and any privacy, representation, measurement, or ethical concern.**
+
+```{r}
+# Load packages and read the data with a relative path or reproducible step.
+# Show only a compact check of dimensions and variables.
+```
+
+## One useful first look
+
+```{r}
+# Create one figure that directly informs your research question.
+# Include a useful title, labels, units, and accessible colors.
+```
+
+**In two to four sentences, explain the most important pattern. Do not make a causal claim unless the study design supports one.**
+
+## Baseline model
+
+**Name and justify one simple starting model.**
+
+```{r}
+# Fit the baseline and display only the output needed below.
+```
+
+**Interpret one important coefficient, contrast, or prediction in context. Include direction, magnitude, units or scale, and uncertainty. Then identify one specific limitation, unexplained pattern, or opportunity for improvement.**
+
+## Where the analysis could go
+
+**Choose two different course-method families from the project instructions. For each, state what you might do and how it could help answer the question. These methods will form the core of the project and may change after feedback.**
+
+1. **Possible direction:** Replace.
+2. **Possible direction:** Replace.
+
+## AI disclosure and sources
+
+**Disclose any AI used for debugging, proofreading, or other help with the proposal. This does not satisfy the required AI extension. Write “No AI used” if applicable. Cite the dataset and any other sources that materially informed the proposal.**
