@@ -1,5 +1,5 @@
 ---
-title: "Replace with a specific project title"
+title: "SAT Statistics and Math Aptitude"
 subtitle: "STAT 330 Portfolio Project Proposal"
 author: "Thomas Clark, Darren Skidmore"
 format:
