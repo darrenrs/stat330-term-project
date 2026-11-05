@@ -1,3 +1,24 @@
 ---
-title: "Home"
+title: "AI Use"
+subtitle: "Preliminary AI-use plan"
 ---
+
+## How AI Has Been Used So Far
+
+AI (GPT-6.1 Sol) was used to scrape the percentage of 2015 graduating class students who took the SAT from each of the College Board's state reports, and it generated all the R code used in this project so far.
+
+## Proposed Extension
+
+**Log-transform the SAT taker percentage.** The percentage of graduating students who took the SAT ranges from about 2% to 100%, which spans two orders of magnitude. The baseline model treats this predictor as linear, which may not describe the relationship well. We propose refitting the model with the log of the SAT taker percentage to see whether the fit improves and whether the associations with average math GPA and region change.
+
+## Planned Verification Checks
+
+1. **Cross-validation of the baseline and extended models.** We will use cross-validation to compare the original linear model with the log-transformed model on data not used to fit them. This checks whether the extension actually improves predictions of SAT math scores for new states, rather than just fitting the 51 observations we already have.
+
+2. **Spot-check of the AI-scraped participation percentages.** Because AI collected the SAT taker percentages from the College Board PDFs, we will compare a sample of the scraped values against the original state reports, including the extremes (Delaware and the District of Columbia at 100%, North Dakota at 1.9%). Any mismatch will be corrected and the model refit.
+
+## Sources
+
+- Bart, A. C. (2016, October 24). *School Scores*. CORGIS Datasets Project. <https://corgis-edu.github.io/corgis/csv/school_scores/>
+- College Board. (2015). *2015 College Board Program Results*.
+- United States Census Bureau. (n.d.). *Census Regions and Divisions of the United States*. <https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf>

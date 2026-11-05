@@ -1,3 +1,17 @@
 ---
-title: "Home"
+title: "SAT Statistics and Math Aptitude"
+subtitle: "STAT 330 Term Project"
 ---
+
+## Group Members
+
+Thomas Clark and Darren Skidmore
+
+## Research Question
+
+What are the associations between a state's **average mathematics GPA**, **percentage of students in that year's graduating class that took the SAT**, and **U.S. region** and its **average SAT mathematics score**?
+
+## Data Sources
+
+- **School Scores (CORGIS Project):** [https://corgis-edu.github.io/corgis/csv/school_scores](https://corgis-edu.github.io/corgis/csv/school_scores). State-level SAT results from 2005 to 2015, including average SAT scores and self-reported GPA. We use the 2015 records only.
+- **College Board 2015 State Reports:** `https://secure-media.collegeboard.org/digitalServices/pdf/cbpr/CBPR_StateReports_2015_[ST].pdf` (replace `[ST]` with the two-letter state
