@@ -4,3 +4,7 @@ Thumbs.db
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Rendered website output (built by GitHub Actions).
+/docs/
+/portfolio/docs/

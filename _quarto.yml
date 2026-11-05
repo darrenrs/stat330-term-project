@@ -1,6 +1,11 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - proposal.qmd
+    - case-study.qmd
+    - ai-use.qmd
 
 website:
   title: "SAT Statistics and Math Aptitude"
@@ -8,6 +13,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: proposal.qmd
+        text: Proposal
       - href: case-study.qmd
         text: Case Study
       - href: ai-use.qmd

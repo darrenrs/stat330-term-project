@@ -1,3 +1,187 @@
 ---
-title: "Home"
+title: "SAT Statistics and Math Aptitude"
+subtitle: "State-level associations among mathematics GPA, SAT participation, region, and SAT mathematics scores"
+author: "Thomas Clark, Darren Skidmore"
+description: "A case study of 2015 SAT mathematics scores in the 50 states and District of Columbia."
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-summary: "Show code"
+execute:
+  warning: false
+  message: false
+  error: false
 ---
+
+::: {.callout-note title="Case study in progress"}
+This draft presents our question, data, and preliminary baseline analysis. The additional course-based methods, AI-supported extension, verification results, and final conclusions are still in development.
+:::
+
+## The question
+
+What are the associations between a state's **average mathematics GPA**, **percentage of students in that year's graduating class who took the SAT**, and **U.S. region** and its **average SAT mathematics score**?
+
+Our intended audience is teachers, educational administrators, and policymakers in education. The question matters because it can inform the public about factors associated with math performance on a test with serious implications. Comparing state averages requires attention to who takes the SAT: participation ranges from a small fraction of a state's graduating class to all graduates.
+
+### Data and scope
+
+We combine three sources:
+
+- **CORGIS School Scores:** SAT results originally collected by the College Board, including average SAT mathematics scores and self-reported mathematics GPA. The original dataset contains 577 observations and 99 variables across 2005–2015.
+- **College Board 2015 State Reports:** The percentage of each state's 2015 graduating class who took the SAT.
+- **U.S. Census regions:** Region classifications for the 50 states and District of Columbia.
+
+We use only 2015 observations to avoid treating repeated observations of the same state across years as independent. The observational unit is one state or DC, giving 51 complete observations. Puerto Rico and the U.S. Virgin Islands are excluded because the corresponding participation reports are unavailable.
+
+The response is average SAT mathematics score. The predictors are average mathematics GPA, SAT participation percentage, and region. These are aggregate, observational data: associations between state averages do not establish effects on individual students or causal relationships.
+
+```{r}
+#| label: prepare-data
+#| include: false
+
+library(tidyverse)
+library(usmap)
+
+school_scores <- read_csv("data/school_scores.csv", show_col_types = FALSE)
+sat_participation <- read_csv(
+  "data/sat_participation_2015.csv",
+  show_col_types = FALSE
+)
+census_regions <- read_csv(
+  "data/us_census_regions.csv",
+  show_col_types = FALSE
+) |>
+  mutate(region = factor(region), division = factor(division))
+
+model_data <- school_scores |>
+  filter(Year == 2015) |>
+  select(
+    state_code = State.Code,
+    sat_math_score = Total.Math,
+    average_math_gpa = `Academic Subjects.Mathematics.Average GPA`
+  ) |>
+  inner_join(
+    sat_participation |>
+      filter(year == 2015) |>
+      select(
+        state_code,
+        sat_taker_percentage = participation_percent
+      ),
+    by = "state_code"
+  ) |>
+  left_join(
+    census_regions |> select(state_code, region),
+    by = "state_code"
+  )
+
+stopifnot(
+  nrow(model_data) == 51,
+  n_distinct(model_data$state_code) == 51,
+  setequal(model_data$state_code, census_regions$state_code),
+  !anyNA(model_data)
+)
+```
+
+## A first look at state differences
+
+The average SAT math score in 2015 ranged from 440 to 616 across U.S. states and the District of Columbia. The states with the highest average scores were typically in the Midwest and South Central, while the lowest average scores were typically found in coastal states as well as Texas, Idaho, and Indiana. These are unadjusted averages among SAT test-takers; the map does not account for differences in participation or GPA.
+
+```{r}
+#| label: fig-sat-math-map
+#| fig-width: 10
+#| fig-height: 6.5
+#| fig-alt: "A choropleth of average SAT mathematics scores among 2015 test-takers in the 50 states and DC, with Alaska and Hawaii shown as insets."
+#| fig-cap: "Reported state averages among SAT test-takers, without adjustment for differences in participation. Alaska and Hawaii are repositioned and rescaled. Source: CORGIS School Scores, 2015 records."
+
+sat_scores_2015 <- model_data |>
+  transmute(state = state_code, math_score = sat_math_score)
+
+sat_math_map <- plot_usmap(
+  regions = "states",
+  data = sat_scores_2015,
+  values = "math_score",
+  include = sat_scores_2015$state,
+  color = "white",
+  linewidth = 0.35
+) +
+  scale_fill_viridis_c(
+    option = "cividis",
+    name = "Average SAT\nmath score",
+    breaks = scales::breaks_pretty(n = 5),
+    labels = scales::label_number(accuracy = 1)
+  ) +
+  labs(
+    title = "Average SAT mathematics score by state, 2015",
+    subtitle = "Among test-takers in the 50 states and District of Columbia",
+    caption = "Source: CORGIS School Scores, 2015 records."
+  ) +
+  theme(
+    text = element_text(size = 12),
+    plot.title = element_text(size = 17, face = "bold"),
+    plot.subtitle = element_text(size = 11, color = "grey30"),
+    plot.caption = element_text(size = 9, color = "grey40"),
+    legend.position = "right",
+    plot.margin = margin(12, 12, 12, 12)
+  )
+
+sat_math_map
+```
+
+## What the baseline shows
+
+We chose a multiple regression model with average math GPA, SAT participation percentage, and region as predictors and SAT math score as the response. This baseline estimates the association of each predictor with the response while holding the other predictors constant.
+
+```{r}
+#| label: baseline-model
+
+sat_model <- lm(
+  sat_math_score ~ average_math_gpa + sat_taker_percentage + region,
+  data = model_data
+)
+
+summary(sat_model)
+confint(sat_model, "average_math_gpa")
+```
+
+Holding participation percentage and region constant, an increase of 1.000 in average math GPA is associated with an estimated 60.74-point increase in average SAT mathematics score. The 95% confidence interval for the average math GPA coefficient is (10.67, 110.82), which excludes zero. The interval is wide, so the size of the association remains uncertain.
+
+A limitation motivating further analysis is the model's linear representation of participation. Participation ranges from about 2% to 100%, so we plan to investigate a log transformation. The wide range alone does not establish that a log transformation is better; that comparison remains to be checked.
+
+## Going beyond the baseline
+
+### Does transforming participation change the associations?
+
+**Planned analysis:** Replace participation percentage with its logarithm and compare the resulting model with the baseline. We will examine whether the transformation changes the estimated associations and improves the model's residual patterns.
+
+<!-- Add the transformation model, diagnostic evidence, and interpretation here. -->
+
+### How well does the model predict a held-out state?
+
+**Planned analysis:** Use cross-validation to assess prediction for held-out state observations and compare the candidate models. Predictive performance will provide additional evidence for choosing a model beyond its fit to the observed data.
+
+<!-- Add the cross-validation design, model comparison, and interpretation here. -->
+
+## A new direction with AI
+
+**Not yet completed:** We still need to select and implement the required AI-supported extension and carry out two independent verification checks. Its method, substantive result, and a summary of those checks will appear here.
+
+The [AI-use record](ai-use.qmd) is the place for the proposed extension, substantive prompts, decisions, and detailed verification evidence. Earlier AI assistance included extracting participation percentages from the College Board's reports and generating the proposal's R code.
+
+<!-- Add the chosen extension and verified results here. Do not present planned checks as completed. -->
+
+## What this means so far
+
+Our preliminary baseline indicates a positive association between state average mathematics GPA and average SAT mathematics score after adjusting for participation and region. This finding concerns state averages among SAT test-takers; it does not show that increasing an individual student's GPA would cause an increase in their SAT score.
+
+The full answer to our research question remains in development. We still need to assess the model's treatment of participation, evaluate predictive performance, and complete the extension before drawing final conclusions about the associations.
+
+<!-- Update this section with the final answer, practical importance, limitations, and next step. -->
+
+## Data and code
+
+- **SAT scores and GPA:** Bart, A. C. (2016). [School Scores, CORGIS Datasets Project](https://corgis-edu.github.io/corgis/csv/school_scores/). Local file: `data/school_scores.csv`.
+- **SAT participation:** College Board (2015), State Reports. Local file: `data/sat_participation_2015.csv`; its `source_url` column identifies the report used for each state. [Example: Alaska's report](https://secure-media.collegeboard.org/digitalServices/pdf/cbpr/CBPR_StateReports_2015_AK.pdf).
+- **Regions:** U.S. Census Bureau, [Census Regions and Divisions of the United States](https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf). Local file: `data/us_census_regions.csv`.
+- **Code:** [Project repository](https://github.com/darrenrs/stat330-term-project). The executable analysis is in `case-study.qmd`.
+- **Project records:** [Original proposal](proposal.qmd) and [AI-use record](ai-use.qmd).
