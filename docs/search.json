@@ -1,0 +1,149 @@
+[
+  {
+    "objectID": "portfolio/ai-use.html",
+    "href": "portfolio/ai-use.html",
+    "title": "AI Use and Verification",
+    "section": "",
+    "text": "This page is a work log, not a second report. Short bullets are welcome. It is separate from the final case study and does not count toward the 750 to 1,000 word range."
+  },
+  {
+    "objectID": "portfolio/ai-use.html#starting-point",
+    "href": "portfolio/ai-use.html#starting-point",
+    "title": "AI Use and Verification",
+    "section": "Starting point",
+    "text": "Starting point\nAI system and date: Replace.\nBefore using AI for the required extension, briefly state your question, course-based core model, baseline result, and the specific limitation or opportunity you wanted to address."
+  },
+  {
+    "objectID": "portfolio/ai-use.html#substantive-prompts",
+    "href": "portfolio/ai-use.html#substantive-prompts",
+    "title": "AI Use and Verification",
+    "section": "Substantive prompts",
+    "text": "Substantive prompts\nPaste the exact prompts that shaped the extension. Include the customized extension-selection prompt from the checkpoint and any important implementation follow-ups. Delete unused prompt blocks.\n\nReplace with an exact prompt.\n\n\nReplace with another exact prompt, if needed."
+  },
+  {
+    "objectID": "portfolio/ai-use.html#my-decisions",
+    "href": "portfolio/ai-use.html#my-decisions",
+    "title": "AI Use and Verification",
+    "section": "My decisions",
+    "text": "My decisions\n\nAccepted: What useful advice did you use?\nChanged: What did you adapt to fit your data or goals?\nRejected or corrected: What advice was unsuitable, unnecessary, or wrong?\n\nConnection to the final case study: Identify where the extension’s method and result appear on the final page and how they strengthen the course-based analysis."
+  },
+  {
+    "objectID": "portfolio/ai-use.html#independent-verification",
+    "href": "portfolio/ai-use.html#independent-verification",
+    "title": "AI Use and Verification",
+    "section": "Independent verification",
+    "text": "Independent verification\n\nCheck and result: Replace with an official source, diagnostic, simulation, manual calculation, comparison with a known method, or another suitable check.\nCheck and result: Replace with a different check and what you learned.\n\nLink or cite verification sources where appropriate. A second AI response does not count as independent verification."
+  },
+  {
+    "objectID": "portfolio/ai-use.html#remaining-limitation",
+    "href": "portfolio/ai-use.html#remaining-limitation",
+    "title": "AI Use and Verification",
+    "section": "Remaining limitation",
+    "text": "Remaining limitation\nState one important uncertainty, failure mode, or limitation that remains."
+  },
+  {
+    "objectID": "portfolio/ai-use.html#other-ai-use-if-any",
+    "href": "portfolio/ai-use.html#other-ai-use-if-any",
+    "title": "AI Use and Verification",
+    "section": "Other AI use, if any",
+    "text": "Other AI use, if any\nBriefly disclose earlier debugging, proofreading, or other AI assistance. Write “None” if there was no other use."
+  },
+  {
+    "objectID": "portfolio/index.html",
+    "href": "portfolio/index.html",
+    "title": "Replace with a specific, informative title",
+    "section": "",
+    "text": "Narrative word count: Replace with a number from 750 to 1,000."
+  },
+  {
+    "objectID": "portfolio/index.html#the-question",
+    "href": "portfolio/index.html#the-question",
+    "title": "Replace with a specific, informative title",
+    "section": "The question",
+    "text": "The question\nIn one or two short paragraphs, introduce the setting, audience, focused research question, data source, observational unit, response, important predictors, and one important data limitation. Lead with what makes the question worth answering."
+  },
+  {
+    "objectID": "portfolio/index.html#what-the-baseline-shows",
+    "href": "portfolio/index.html#what-the-baseline-shows",
+    "title": "Replace with a specific, informative title",
+    "section": "What the baseline shows",
+    "text": "What the baseline shows\nDescribe and justify a simple course-based baseline regression model. Interpret the result that best establishes the rest of the story, including its direction, magnitude, scale, and uncertainty. Explain one limitation or unresolved pattern that motivates deeper analysis.\n\n# Load packages and data, document preparation, and fit the baseline.\n\n\n# Show a primary figure or table only if it helps answer the question."
+  },
+  {
+    "objectID": "portfolio/index.html#going-beyond-the-baseline",
+    "href": "portfolio/index.html#going-beyond-the-baseline",
+    "title": "Replace with a specific, informative title",
+    "section": "Going beyond the baseline",
+    "text": "Going beyond the baseline\nUse two STAT 330 method families. Give each part a descriptive heading that states the question or finding, not an assignment label. Explain why you chose each method, how you checked it, and what it adds to the answer.\n\nReplace with a question or finding\nPresent one method and its most useful evidence.\n\n# Analysis code for this part.\n\n\n\nReplace with another question or finding\nPresent a method from a different family and its most useful evidence. Combine this with the preceding subsection if that creates a clearer story.\n\n# Analysis code for this part."
+  },
+  {
+    "objectID": "portfolio/index.html#a-new-direction-with-ai",
+    "href": "portfolio/index.html#a-new-direction-with-ai",
+    "title": "Replace with a specific, informative title",
+    "section": "A new direction with AI",
+    "text": "A new direction with AI\nExplain the need revealed by your preliminary course-based work, the extension you implemented with AI support, and what it contributes to the same research question. Show its substantive result on this page and summarize your independent checks. If the extension is an untaught comparator, evaluate it against the core course-based model. Link to the AI-use record instead of placing a transcript here.\n\n# Implement the verified extension or show its most useful result.\n\nDetails are in the AI-use record."
+  },
+  {
+    "objectID": "portfolio/index.html#what-this-means",
+    "href": "portfolio/index.html#what-this-means",
+    "title": "Replace with a specific, informative title",
+    "section": "What this means",
+    "text": "What this means\nAnswer the research question directly. Distinguish statistical evidence from practical importance, state the most consequential limitations, and suggest one sensible next step. Avoid causal claims unless the study design supports them."
+  },
+  {
+    "objectID": "portfolio/index.html#data-and-code",
+    "href": "portfolio/index.html#data-and-code",
+    "title": "Replace with a specific, informative title",
+    "section": "Data and code",
+    "text": "Data and code\n\nData: Replace with a working source link or citation and any brief acquisition note needed to reproduce the project.\nRepository: Replace with your repository URL.\nAI-use record\nOther sources: Cite package documentation, articles, code, and other sources that materially informed the work."
+  },
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "SAT Statistics and Math Aptitude",
+    "section": "",
+    "text": "What are the associations between a state’s average mathematics GPA, percentage of students in that year’s graduating class that took the SAT, and U.S. region to average SAT mathematics score?\nThe intended audience are teachers, educational administrators, and policymakers in education. The answer matters because it can be used to inform the public about factors that may influence math performance on a test with serious implications."
+  },
+  {
+    "objectID": "proposal.html#question-and-audience",
+    "href": "proposal.html#question-and-audience",
+    "title": "SAT Statistics and Math Aptitude",
+    "section": "",
+    "text": "What are the associations between a state’s average mathematics GPA, percentage of students in that year’s graduating class that took the SAT, and U.S. region to average SAT mathematics score?\nThe intended audience are teachers, educational administrators, and policymakers in education. The answer matters because it can be used to inform the public about factors that may influence math performance on a test with serious implications."
+  },
+  {
+    "objectID": "proposal.html#data",
+    "href": "proposal.html#data",
+    "title": "SAT Statistics and Math Aptitude",
+    "section": "Data",
+    "text": "Data\n\nSchool Scores\nhttps://corgis-edu.github.io/corgis/csv/school_scores\nA dataset from the CORGIS project about US state (including DC, Puerto Rico, and US Virgin Islands) results on the SAT from 2005 to 2015, containing 577 observations of 99 features including students’ mean SAT score in Verbal and Math, self-reported GPA, self-reported household income, and self-reported years taken of school subjects. The observational unit is one state/DC in 2015 and the final sample is 51 complete observations.\nWe are only using the observations from 2015 because year-to-year observations are not independent. The data were collected from the College Board. Datasets provided by the CORGIS project are licensed under the GPL-2.0 license.\n\n\nCollege Board 2015 State Reports\nhttps://secure-media.collegeboard.org/digitalServices/pdf/cbpr/CBPR_StateReports_2015_[ST].pdf - replace [ST] with the two letter state FIPS code\nA collection of PDFs for all 50 states + DC which contains information about SAT test takers in 2015, including what percentage of all graduating high school students in the class of 2015 took the SAT. This percentage ranges from a high of 100% (Delaware, District of Columbia) to a low of 1.9% (North Dakota). Statistics from these documents do not fall under U.S. copyright law (17 U.S.C. §103(b)).\nBecause reports for Puerto Rico and US Virgin Islands are not available, they are excluded from the entire analysis.\n\n\nU.S. Census Regions\nhttps://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf\nA simple CSV file compiled from this link contains the official regions and subregions (divisions) for all 50 states + DC.\n\n\nShow code\nlibrary(tidyverse)\n\nschool_scores &lt;- read_csv(\"data/school_scores.csv\", show_col_types = FALSE)\nsat_participation &lt;- read_csv(\n  \"data/sat_participation_2015.csv\",\n  show_col_types = FALSE\n)\ncensus_regions &lt;- read_csv(\n  \"data/us_census_regions.csv\",\n  show_col_types = FALSE\n) |&gt;\n  mutate(region = factor(region), division = factor(division))\n\n# Dimensions of the original datasets, before filtering or joining.\ntibble(\n  dataset = c(\"School scores\", \"SAT participation (2015)\", \"Census regions\"),\n  observations = c(\n    nrow(school_scores),\n    nrow(sat_participation),\n    nrow(census_regions)\n  ),\n  variables = c(\n    ncol(school_scores),\n    ncol(sat_participation),\n    ncol(census_regions)\n  )\n)\n\n\n# A tibble: 3 × 3\n  dataset                  observations variables\n  &lt;chr&gt;                           &lt;int&gt;     &lt;int&gt;\n1 School scores                     577        99\n2 SAT participation (2015)           51         6\n3 Census regions                     51         4\n\n\nShow code\n# Summarize the variables relevant to the proposed analysis.\ncat(\"\\nSchool scores (all years):\\n\")\n\n\n\nSchool scores (all years):\n\n\nShow code\nschool_scores |&gt;\n  select(\n    Year,\n    Total.Math,\n    Total.Verbal,\n    `Total.Test-takers`,\n    `Academic Subjects.Mathematics.Average GPA`\n  ) |&gt;\n  summary()\n\n\n      Year        Total.Math     Total.Verbal   Total.Test-takers\n Min.   :2005   Min.   :383.0   Min.   :401.0   Min.   :   134   \n 1st Qu.:2007   1st Qu.:504.0   1st Qu.:496.0   1st Qu.:  2536   \n Median :2010   Median :527.0   Median :522.0   Median :  6468   \n Mean   :2010   Mean   :535.7   Mean   :531.3   Mean   : 27914   \n 3rd Qu.:2013   3rd Qu.:571.0   3rd Qu.:572.0   3rd Qu.: 35799   \n Max.   :2015   Max.   :619.0   Max.   :612.0   Max.   :241553   \n Academic Subjects.Mathematics.Average GPA\n Min.   :2.85                             \n 1st Qu.:3.12                             \n Median :3.30                             \n Mean   :3.31                             \n 3rd Qu.:3.51                             \n Max.   :3.76                             \n\n\nShow code\ncat(\"\\nSAT participation:\\n\")\n\n\n\nSAT participation:\n\n\nShow code\nsat_participation |&gt;\n  select(year, participation_percent, sat_test_takers) |&gt;\n  summary()\n\n\n      year      participation_percent sat_test_takers \n Min.   :2015   Min.   :  1.90        Min.   :   134  \n 1st Qu.:2015   1st Qu.:  4.45        1st Qu.:  2126  \n Median :2015   Median : 46.60        Median :  6485  \n Mean   :2015   Mean   : 40.93        Mean   : 30358  \n 3rd Qu.:2015   3rd Qu.: 71.55        3rd Qu.: 40434  \n Max.   :2015   Max.   :100.00        Max.   :241553  \n\n\nShow code\ncat(\"\\nCensus region and division counts:\\n\")\n\n\n\nCensus region and division counts:\n\n\nShow code\ncensus_regions |&gt;\n  select(region, division) |&gt;\n  summary()\n\n\n       region                 division \n Midwest  :12   South Atlantic    : 9  \n Northeast: 9   Mountain          : 8  \n South    :17   West North Central: 7  \n West     :13   New England       : 6  \n                East North Central: 5  \n                Pacific           : 5  \n                (Other)           :11"
+  },
+  {
+    "objectID": "proposal.html#one-useful-first-look",
+    "href": "proposal.html#one-useful-first-look",
+    "title": "SAT Statistics and Math Aptitude",
+    "section": "One useful first look",
+    "text": "One useful first look\n\n\nShow code\nlibrary(usmap)\n\nsat_scores_2015 &lt;- school_scores |&gt;\n  filter(Year == 2015, State.Code %in% census_regions$state_code) |&gt;\n  transmute(state = State.Code, math_score = Total.Math)\n\nstopifnot(\n  nrow(sat_scores_2015) == 51,\n  n_distinct(sat_scores_2015$state) == 51,\n  !anyNA(sat_scores_2015$math_score)\n)\n\nsat_math_map &lt;- plot_usmap(\n  regions = \"states\",\n  data = sat_scores_2015,\n  values = \"math_score\",\n  include = sat_scores_2015$state,\n  color = \"white\",\n  linewidth = 0.35\n) +\n  scale_fill_viridis_c(\n    option = \"cividis\",\n    name = \"Average SAT\\nmath score\",\n    breaks = scales::breaks_pretty(n = 5),\n    labels = scales::label_number(accuracy = 1)\n  ) +\n  labs(\n    title = \"Average SAT mathematics score by state, 2015\",\n    subtitle = \"Among test-takers in the 50 states and District of Columbia\",\n    caption = \"Source: CORGIS School Scores, 2015 records.\"\n  ) +\n  theme(\n    text = element_text(size = 12),\n    plot.title = element_text(size = 17, face = \"bold\"),\n    plot.subtitle = element_text(size = 11, color = \"grey30\"),\n    plot.caption = element_text(size = 9, color = \"grey40\"),\n    legend.position = \"right\",\n    plot.margin = margin(12, 12, 12, 12)\n  )\n\nsat_math_map\n\n\n\n\n\n\n\n\nFigure 1: Reported state averages among SAT test-takers, without adjustment for differences in participation. Alaska and Hawaii are repositioned and rescaled.\n\n\n\n\n\nThe average SAT math score in 2015 ranged from 440 to 616 across U.S. states and the District of Columbia. The states with the highest average scores were typically in the Midwest and South Central, while the lowest average scores were typically found in coastal states as well as Texas, Idaho, and Indiana."
+  },
+  {
+    "objectID": "proposal.html#baseline-model",
+    "href": "proposal.html#baseline-model",
+    "title": "SAT Statistics and Math Aptitude",
+    "section": "Baseline model",
+    "text": "Baseline model\nChose a multiple regression model with average math GPA, SAT taker percentage, and region as predictors and SAT math score as the response.\n\n\nShow code\nmodel_data &lt;- school_scores |&gt;\n  filter(Year == 2015) |&gt;\n  select(\n    state_code = State.Code,\n    sat_math_score = Total.Math,\n    average_math_gpa = `Academic Subjects.Mathematics.Average GPA`\n  ) |&gt;\n  inner_join(\n    sat_participation |&gt;\n      filter(year == 2015) |&gt;\n      select(\n        state_code,\n        sat_taker_percentage = participation_percent\n      ),\n    by = \"state_code\"\n  ) |&gt;\n  left_join(\n    census_regions |&gt; select(state_code, region),\n    by = \"state_code\"\n  )\n\nsat_model &lt;- lm(\n  sat_math_score ~ average_math_gpa + sat_taker_percentage + region,\n  data = model_data\n)\n\nsummary(sat_model)\n\n\n\nCall:\nlm(formula = sat_math_score ~ average_math_gpa + sat_taker_percentage + \n    region, data = model_data)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-49.032  -6.443   0.495   6.458  34.546 \n\nCoefficients:\n                     Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)          383.1142    90.2702   4.244 0.000108 ***\naverage_math_gpa      60.7448    24.8603   2.443 0.018534 *  \nsat_taker_percentage  -0.8409     0.1545  -5.441 2.09e-06 ***\nregionNortheast       -3.9132     8.5038  -0.460 0.647606    \nregionSouth          -32.5054     6.2447  -5.205 4.63e-06 ***\nregionWest           -19.2945     7.0815  -2.725 0.009134 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 15.07 on 45 degrees of freedom\nMultiple R-squared:  0.9091,    Adjusted R-squared:  0.899 \nF-statistic: 90.03 on 5 and 45 DF,  p-value: &lt; 2.2e-16\n\n\nHolding all other predictors constant, an increase of 1.000 in average math GPA is associated with an estimated 60.74 increase in SAT mathematics score, on average. The 95% CI for the average math GPA coefficient is (10.67, 110.82), which is statistically significant against \\(H_0: \\beta_1=0\\). A weakness is that because the span of the SAT taker percentage ranges from 2% to 100%, it may be reasonable to assume that the current linear representation is less effective than a log transformation."
+  },
+  {
+    "objectID": "proposal.html#where-the-analysis-could-go",
+    "href": "proposal.html#where-the-analysis-could-go",
+    "title": "SAT Statistics and Math Aptitude",
+    "section": "Where the analysis could go",
+    "text": "Where the analysis could go\n\nModel structure: Transform the SAT taker percentage to a log. It spans two order of magnitudes, and would be interesting to see how that affects the model, if the associations change.\nValidation and comparison: Perform cross-validation to see if the model can be used to predict previously unknown responses. This may help support the model’s predictive validity."
+  },
+  {
+    "objectID": "proposal.html#ai-disclosure-and-sources",
+    "href": "proposal.html#ai-disclosure-and-sources",
+    "title": "SAT Statistics and Math Aptitude",
+    "section": "AI disclosure and sources",
+    "text": "AI disclosure and sources\nAI (GPT-6.1 Sol) was used to scrape the percentage of 2015 graduating class students who took the SAT from each of the College Board’s state reports, and it generated all the R code.\nBart, A. C. (2016, October 24). School Scores. CORGIS Datasets Project. https://corgis-edu.github.io/corgis/csv/school_scores/\nCollege Board. (2015). 2015 College Board Program Results.\nUnited States Census Bureau. (n.d.). Census Regions and Divisions of the United States. https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf"
+  }
+]

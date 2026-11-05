@@ -1,0 +1,202 @@
+---
+title: "SAT Statistics and Math Aptitude"
+subtitle: "STAT 330 Portfolio Project Proposal"
+author: "Thomas Clark, Darren Skidmore"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+    code-summary: "Show code"
+    embed-resources: true
+execute:
+  warning: false
+  message: false
+---
+
+## Question and audience
+
+What are the associations between a state’s **average mathematics GPA**, **percentage of students in that year’s graduating class that took the SAT**, and **U.S. region** to **average SAT mathematics score**?
+
+The intended audience are teachers, educational administrators, and policymakers in education. The answer matters because it can be used to inform the public about factors that may influence math performance on a test with serious implications.
+
+## Data
+
+### School Scores
+
+[https://corgis-edu.github.io/corgis/csv/school_scores](https://corgis-edu.github.io/corgis/csv/school_scores)
+
+A dataset from the CORGIS project about US state (including DC, Puerto Rico, and US Virgin Islands) results on the SAT from 2005 to 2015, containing 577 observations of 99 features including students' mean SAT score in Verbal and Math, self-reported GPA, self-reported household income, and self-reported years taken of school subjects. The observational unit is one state/DC in 2015 and the final sample is 51 complete observations.
+
+We are only using the observations from 2015 because year-to-year observations are not independent. The data were collected from the College Board. Datasets provided by the CORGIS project are licensed under the GPL-2.0 license.
+
+### College Board 2015 State Reports
+
+[https://secure-media.collegeboard.org/digitalServices/pdf/cbpr/CBPR_StateReports_2015_[ST].pdf](https://secure-media.collegeboard.org/digitalServices/pdf/cbpr/CBPR_StateReports_2015_[ST].pdf) - replace [ST] with the two letter state FIPS code
+
+A collection of PDFs for all 50 states + DC which contains information about SAT test takers in 2015, including what percentage of all graduating high school students in the class of 2015 took the SAT. This percentage ranges from a high of 100% (Delaware, District of Columbia) to a low of 1.9% (North Dakota). Statistics from these documents do not fall under U.S. copyright law (17 U.S.C. §103(b)).
+
+Because reports for Puerto Rico and US Virgin Islands are not available, they are excluded from the entire analysis.
+
+### U.S. Census Regions
+
+[https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf](https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf)
+
+A simple CSV file compiled from this link contains the official regions and subregions (divisions) for all 50 states + DC.
+
+```{r}
+library(tidyverse)
+
+school_scores <- read_csv("data/school_scores.csv", show_col_types = FALSE)
+sat_participation <- read_csv(
+  "data/sat_participation_2015.csv",
+  show_col_types = FALSE
+)
+census_regions <- read_csv(
+  "data/us_census_regions.csv",
+  show_col_types = FALSE
+) |>
+  mutate(region = factor(region), division = factor(division))
+
+# Dimensions of the original datasets, before filtering or joining.
+tibble(
+  dataset = c("School scores", "SAT participation (2015)", "Census regions"),
+  observations = c(
+    nrow(school_scores),
+    nrow(sat_participation),
+    nrow(census_regions)
+  ),
+  variables = c(
+    ncol(school_scores),
+    ncol(sat_participation),
+    ncol(census_regions)
+  )
+)
+
+# Summarize the variables relevant to the proposed analysis.
+cat("\nSchool scores (all years):\n")
+school_scores |>
+  select(
+    Year,
+    Total.Math,
+    Total.Verbal,
+    `Total.Test-takers`,
+    `Academic Subjects.Mathematics.Average GPA`
+  ) |>
+  summary()
+
+cat("\nSAT participation:\n")
+sat_participation |>
+  select(year, participation_percent, sat_test_takers) |>
+  summary()
+
+cat("\nCensus region and division counts:\n")
+census_regions |>
+  select(region, division) |>
+  summary()
+```
+
+## One useful first look
+
+```{r}
+#| label: fig-sat-math-map
+#| fig-width: 10
+#| fig-height: 6.5
+#| fig-alt: "A choropleth of average SAT mathematics scores among 2015 test-takers in the 50 states and DC, with Alaska and Hawaii shown as insets."
+#| fig-cap: "Reported state averages among SAT test-takers, without adjustment for differences in participation. Alaska and Hawaii are repositioned and rescaled."
+
+library(usmap)
+
+sat_scores_2015 <- school_scores |>
+  filter(Year == 2015, State.Code %in% census_regions$state_code) |>
+  transmute(state = State.Code, math_score = Total.Math)
+
+stopifnot(
+  nrow(sat_scores_2015) == 51,
+  n_distinct(sat_scores_2015$state) == 51,
+  !anyNA(sat_scores_2015$math_score)
+)
+
+sat_math_map <- plot_usmap(
+  regions = "states",
+  data = sat_scores_2015,
+  values = "math_score",
+  include = sat_scores_2015$state,
+  color = "white",
+  linewidth = 0.35
+) +
+  scale_fill_viridis_c(
+    option = "cividis",
+    name = "Average SAT\nmath score",
+    breaks = scales::breaks_pretty(n = 5),
+    labels = scales::label_number(accuracy = 1)
+  ) +
+  labs(
+    title = "Average SAT mathematics score by state, 2015",
+    subtitle = "Among test-takers in the 50 states and District of Columbia",
+    caption = "Source: CORGIS School Scores, 2015 records."
+  ) +
+  theme(
+    text = element_text(size = 12),
+    plot.title = element_text(size = 17, face = "bold"),
+    plot.subtitle = element_text(size = 11, color = "grey30"),
+    plot.caption = element_text(size = 9, color = "grey40"),
+    legend.position = "right",
+    plot.margin = margin(12, 12, 12, 12)
+  )
+
+sat_math_map
+```
+
+The average SAT math score in 2015 ranged from 440 to 616 across U.S. states and the District of Columbia. The states with the highest average scores were typically in the Midwest and South Central, while the lowest average scores were typically found in coastal states as well as Texas, Idaho, and Indiana.
+
+## Baseline model
+
+Chose a multiple regression model with average math GPA, SAT taker percentage, and region as predictors and SAT math score as the response.
+
+```{r}
+model_data <- school_scores |>
+  filter(Year == 2015) |>
+  select(
+    state_code = State.Code,
+    sat_math_score = Total.Math,
+    average_math_gpa = `Academic Subjects.Mathematics.Average GPA`
+  ) |>
+  inner_join(
+    sat_participation |>
+      filter(year == 2015) |>
+      select(
+        state_code,
+        sat_taker_percentage = participation_percent
+      ),
+    by = "state_code"
+  ) |>
+  left_join(
+    census_regions |> select(state_code, region),
+    by = "state_code"
+  )
+
+sat_model <- lm(
+  sat_math_score ~ average_math_gpa + sat_taker_percentage + region,
+  data = model_data
+)
+
+summary(sat_model)
+```
+
+Holding all other predictors constant, an increase of 1.000 in average math GPA is associated with an estimated 60.74 increase in SAT mathematics score, on average. The 95% CI for the average math GPA coefficient is (10.67, 110.82), which is statistically significant against $H_0: \beta_1=0$. A weakness is that because the span of the SAT taker percentage ranges from 2% to 100%, it may be reasonable to assume that the current linear representation is less effective than a log transformation.
+
+## Where the analysis could go
+
+1. **Model structure:** Transform the SAT taker percentage to a log. It spans two order of magnitudes, and would be interesting to see how that affects the model, if the associations change.
+2. **Validation and comparison:** Perform cross-validation to see if the model can be used to predict previously unknown responses. This may help support the model's predictive validity.
+
+## AI disclosure and sources
+
+AI (GPT-6.1 Sol) was used to scrape the percentage of 2015 graduating class students who took the SAT from each of the College Board’s state reports, and it generated all the R code.
+
+```
+Bart, A. C. (2016, October 24). School Scores. CORGIS Datasets Project. https://corgis-edu.github.io/corgis/csv/school_scores/
+College Board. (2015). 2015 College Board Program Results.
+United States Census Bureau. (n.d.). Census Regions and Divisions of the United States. https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf
+```
